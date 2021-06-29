@@ -1,5 +1,6 @@
 package com.example.diceroller
 
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -16,8 +17,10 @@ class MainActivity : AppCompatActivity() {
         val text : TextView = findViewById(R.id.tvRoll)
 
         val tvRoll : ImageView = findViewById(R.id.dicePhase)
+        val Play = MediaPlayer.create(this, R.raw.diceroll)
 
         btn1.setOnClickListener {
+           Play.start()
             val randomNum = (1..6).random()
 
             text.text = randomNum.toString()
